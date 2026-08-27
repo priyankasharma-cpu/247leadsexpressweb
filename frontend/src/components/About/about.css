@@ -1,0 +1,1698 @@
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about-section {
+    position: relative;
+
+    width: 100%;
+
+    padding: 110px 0;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.about-container {
+    width: min(1180px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr) minmax(0, 1.05fr);
+
+    align-items: center;
+
+    gap: 85px;
+}
+
+
+/* =========================================================
+   LEFT VISUAL
+========================================================= */
+
+.about-visual {
+    position: relative;
+
+    min-height: 550px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.about-image-main {
+    position: absolute;
+
+    top: 32px;
+    right: 0;
+
+    width: 65%;
+    height: 390px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #111111;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.about-image-main img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.about-image-main:hover img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   SECONDARY IMAGE
+========================================================= */
+
+.about-image-secondary {
+    position: absolute;
+
+    left: 0;
+    bottom: 40px;
+
+    width: 53%;
+    height: 290px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #eeeeee;
+
+    border: 7px solid #ffffff;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.13);
+
+    z-index: 2;
+}
+
+.about-image-secondary img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* =========================================================
+   MARKETING ORBIT CIRCLE
+========================================================= */
+
+.about-marketing-orbit {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 6;
+
+    width: 160px;
+    height: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   CENTER DONUT
+========================================================= */
+
+.about-orbit-center {
+    position: relative;
+
+    z-index: 5;
+
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(#d90000 0deg 95deg,
+            #111111 95deg 175deg,
+            #d90000 175deg 255deg,
+            #111111 255deg 360deg);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.20);
+
+    animation:
+        aboutCenterPulse 3s ease-in-out infinite;
+}
+
+
+/* Inner donut */
+
+.about-orbit-center::before {
+    content: "";
+
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    border-radius: 50%;
+
+    background: #111111;
+}
+
+
+/* Center content */
+
+.about-orbit-center-inner {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    line-height: 1;
+}
+
+.about-orbit-center-inner span {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    letter-spacing: -0.5px;
+}
+
+.about-orbit-center-inner strong {
+    margin-top: 3px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 1px;
+}
+
+.about-orbit-center-inner small {
+    margin-top: 4px;
+
+    color: #d90000;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+}
+
+
+/* =========================================================
+   ORBIT RING
+========================================================= */
+
+.about-orbit-ring {
+    position: absolute;
+
+    inset: -22px;
+
+    border: 1px dashed rgba(17, 17, 17, 0.22);
+
+    border-radius: 50%;
+
+    animation:
+        aboutOrbitRotate 18s linear infinite;
+}
+
+
+/* =========================================================
+   ORBIT ITEMS
+========================================================= */
+
+.about-orbit-item {
+    position: absolute;
+
+    width: 74px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 4px;
+
+    transform:
+        translate(-50%, -50%);
+
+    text-align: center;
+
+    animation:
+        aboutOrbitCounterRotate 18s linear infinite;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.about-orbit-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border: 2px solid #eeeeee;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.about-orbit-item:hover .about-orbit-icon {
+    transform: scale(1.12);
+
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.about-orbit-item>span {
+    padding: 3px 6px;
+
+    color: #333333;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 3px;
+
+    font-size: 7px;
+
+    line-height: 1.1;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   GOOGLE ADS
+========================================================= */
+
+.about-orbit-google {
+    top: 0;
+    left: 50%;
+}
+
+.about-orbit-google .about-orbit-icon {
+    color: #4285f4;
+}
+
+.google-g {
+    font-size: 22px;
+
+    font-weight: 850;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(135deg,
+            #4285f4 0%,
+            #34a853 35%,
+            #fbbc05 65%,
+            #ea4335 100%);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.about-orbit-meta {
+    top: 25%;
+    left: 100%;
+}
+
+.about-orbit-meta .about-orbit-icon {
+    color: #0866ff;
+}
+
+.meta-symbol {
+    font-size: 27px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    color: #0866ff;
+}
+
+
+/* =========================================================
+   AFFILIATE
+========================================================= */
+
+.about-orbit-affiliate {
+    top: 76%;
+    left: 91%;
+}
+
+.about-orbit-affiliate .about-orbit-icon {
+    color: #7c3aed;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.about-orbit-email {
+    top: 100%;
+    left: 50%;
+}
+
+.about-orbit-email .about-orbit-icon {
+    color: #ea4335;
+}
+
+
+/* =========================================================
+   LEAD GENERATION
+========================================================= */
+
+.about-orbit-leads {
+    top: 76%;
+    left: 9%;
+}
+
+.about-orbit-leads .about-orbit-icon {
+    color: #d90000;
+}
+
+
+/* =========================================================
+   TRACKING
+========================================================= */
+
+.about-orbit-tracking {
+    top: 25%;
+    left: 0;
+}
+
+.about-orbit-tracking .about-orbit-icon {
+    color: #16a34a;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes aboutOrbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes aboutOrbitCounterRotate {
+    from {
+        transform:
+            translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes aboutCenterPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-marketing-orbit {
+        width: 118px;
+        height: 118px;
+    }
+
+    .about-orbit-center {
+        width: 85px;
+        height: 85px;
+    }
+
+    .about-orbit-center::before {
+        width: 65px;
+        height: 65px;
+    }
+
+    .about-orbit-center-inner span {
+        font-size: 15px;
+    }
+
+    .about-orbit-center-inner strong {
+        font-size: 8px;
+    }
+
+    .about-orbit-center-inner small {
+        font-size: 6px;
+    }
+
+    .about-orbit-ring {
+        inset: -15px;
+    }
+
+    .about-orbit-item {
+        width: 62px;
+    }
+
+    .about-orbit-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .about-orbit-item>span {
+        font-size: 6px;
+    }
+}
+
+/* =========================================================
+   GLASS GROWTH CARD
+========================================================= */
+
+.about-growth-glass-card {
+    position: absolute;
+
+    right: 2%;
+    bottom: 1px;
+
+    z-index: 5;
+
+    width: 215px;
+    height: 110px;
+
+    padding: 12px 15px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(30, 30, 30, 0.92),
+            rgba(10, 10, 10, 0.82));
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   SUBTLE GLASS SHINE
+========================================================= */
+
+.about-growth-glass-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -80%;
+
+    width: 45%;
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.07),
+            transparent);
+
+    transform: skewX(-18deg);
+
+    animation:
+        growthGlassShine 5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.growth-glass-header {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.1px;
+}
+
+.growth-glass-live {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #d90000;
+
+    box-shadow:
+        0 0 0 3px rgba(217, 0, 0, 0.10);
+
+    animation:
+        growthLivePulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.growth-glass-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 8px;
+}
+
+.growth-glass-value strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.growth-glass-value span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: rgba(255, 255, 255, 0.46);
+
+    font-size: 7px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ARROW ICON
+========================================================= */
+
+.growth-glass-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(135deg,
+            #e00000,
+            #a90000);
+
+    box-shadow:
+        0 6px 18px rgba(217, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.growth-glass-chart {
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+
+    bottom: 26px;
+
+    height: 48px;
+}
+
+.growth-glass-chart svg {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   GRAPH AREA
+========================================================= */
+
+.growth-glass-area {
+    fill: url(#growthGradient);
+
+    opacity: 0;
+
+    animation:
+        growthAreaReveal 1.4s ease-out forwards;
+}
+
+
+/* =========================================================
+   GRAPH LINE
+========================================================= */
+
+.growth-glass-line {
+    fill: none;
+
+    stroke: #e00000;
+
+    stroke-width: 2.2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+
+    filter:
+        drop-shadow(0 0 5px rgba(217, 0, 0, 0.35));
+
+    animation:
+        growthLineDraw 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+
+/* =========================================================
+   END POINT
+========================================================= */
+
+.growth-glass-point {
+    fill: #ffffff;
+
+    stroke: #e00000;
+
+    stroke-width: 2.5;
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(0 0 5px rgba(217, 0, 0, 0.55));
+
+    animation:
+        growthPointReveal 0.4s ease-out 1.8s forwards;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.growth-glass-footer {
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+
+    bottom: 9px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 6px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 6.5px;
+
+    font-weight: 600;
+}
+
+.growth-glass-footer span:last-child {
+    color: #e00000;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.about-growth-glass-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.30),
+        0 0 25px rgba(217, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes growthLineDraw {
+
+    from {
+        stroke-dashoffset: 420;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes growthAreaReveal {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growthPointReveal {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.5);
+
+        transform-origin: center;
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+
+        transform-origin: center;
+    }
+}
+
+@keyframes growthGlassShine {
+
+    0%,
+    55% {
+        left: -80%;
+    }
+
+    75%,
+    100% {
+        left: 140%;
+    }
+}
+
+@keyframes growthLivePulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-growth-glass-card {
+        right: 0;
+        bottom: 0;
+
+        width: 170px;
+        height: 100px;
+
+        padding: 13px 15px;
+    }
+
+    .growth-glass-value strong {
+        font-size: 16px;
+    }
+
+    .growth-glass-icon {
+        width: 27px;
+        height: 27px;
+
+        font-size: 15px;
+    }
+
+    .growth-glass-chart {
+        left: 12px;
+        right: 12px;
+
+        bottom: 24px;
+
+        height: 42px;
+    }
+
+    .growth-glass-footer {
+        left: 12px;
+        right: 12px;
+
+        bottom: 8px;
+    }
+}
+
+
+/* =========================================================
+   DECORATIVE ACCENT
+========================================================= */
+
+.about-visual-accent {
+    position: absolute;
+
+    right: -18px;
+    top: 85px;
+
+    width: 42px;
+    height: 42px;
+
+    border-top: 4px solid #d90000;
+    border-right: 4px solid #d90000;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.about-content {
+    max-width: 570px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.about-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #c80000;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+.about-eyebrow-line {
+    display: block;
+
+    width: 26px;
+    height: 2px;
+
+    background: #d90000;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.about-title {
+    margin: 17px 0 20px;
+
+    max-width: 560px;
+
+    color: #111111;
+
+    font-size: clamp(36px, 4vw, 51px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
+}
+
+.about-title span {
+    color: #d00000;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-description {
+    max-width: 535px;
+
+    margin: 0;
+
+    color: #686868;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.about-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-top: 32px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #e8e8e8;
+}
+
+.about-feature {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.about-feature-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #d00000;
+
+    background: #fff3f3;
+
+    border: 1px solid #ffdede;
+
+    border-radius: 5px;
+}
+
+.about-feature h3 {
+    margin: 0;
+
+    color: #171717;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    font-weight: 750;
+}
+
+.about-feature p {
+    margin: 6px 0 0;
+
+    color: #777777;
+
+    font-size: 10.5px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   PROOF / STATS
+========================================================= */
+
+.about-proof {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 27px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   PROOF CARD
+========================================================= */
+
+.about-proof-card {
+    position: relative;
+
+    min-width: 0;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 12px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(145deg,
+            #151515 0%,
+            #101010 100%);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   SUBTLE GLASS SHINE
+========================================================= */
+
+.about-proof-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.055),
+            transparent);
+
+    transform: skewX(-20deg);
+
+    transition: left 0.65s ease;
+
+    pointer-events: none;
+}
+
+.about-proof-card:hover::before {
+    left: 140%;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.about-proof-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(208, 0, 0, 0.28);
+
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.16),
+        0 0 20px rgba(208, 0, 0, 0.055),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.about-proof-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 31px;
+    height: 31px;
+
+    flex: 0 0 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(135deg,
+            #e00000,
+            #b00000);
+
+    box-shadow:
+        0 5px 13px rgba(208, 0, 0, 0.20);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.about-proof-card:hover .about-proof-icon {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.about-proof-content {
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+}
+
+.about-proof-card strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    line-height: 1;
+
+    font-weight: 850;
+
+    letter-spacing: -0.3px;
+}
+
+.about-proof-card span {
+    display: block;
+
+    margin-top: 5px;
+
+    overflow: hidden;
+
+    color: rgba(255, 255, 255, 0.52);
+
+    font-size: 8px;
+
+    line-height: 1.15;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   RED BOTTOM ACCENT
+========================================================= */
+
+.about-proof-accent {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 28px;
+    height: 2px;
+
+    background:
+        linear-gradient(90deg,
+            #e00000,
+            transparent);
+
+    transition:
+        width 0.3s ease;
+}
+
+.about-proof-card:hover .about-proof-accent {
+    width: 65px;
+}
+
+
+/* =========================================================
+   MOBILE — KEEP ALL 3 IN ONE ROW
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-proof {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 6px;
+
+        margin-top: 20px;
+    }
+
+    .about-proof-card {
+        min-height: 61px;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 5px;
+
+        padding: 8px 4px;
+
+        text-align: center;
+
+        border-radius: 6px;
+    }
+
+    .about-proof-icon {
+        width: 25px;
+        height: 25px;
+
+        flex-basis: 25px;
+    }
+
+    .about-proof-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .about-proof-card strong {
+        font-size: 13px;
+    }
+
+    .about-proof-card span {
+        margin-top: 3px;
+
+        font-size: 6.5px;
+
+        white-space: nowrap;
+    }
+
+    .about-proof-accent {
+        width: 20px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .about-proof {
+        gap: 5px;
+    }
+
+    .about-proof-card {
+        min-height: 57px;
+
+        padding: 7px 3px;
+    }
+
+    .about-proof-icon {
+        width: 23px;
+        height: 23px;
+
+        flex-basis: 23px;
+    }
+
+    .about-proof-card strong {
+        font-size: 12px;
+    }
+
+    .about-proof-card span {
+        font-size: 6px;
+    }
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.about-cta {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 25px;
+
+    padding: 12px 18px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #dc0000,
+            #b70000);
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 18px rgba(210, 0, 0, 0.16);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.about-cta svg {
+    transition:
+        transform 0.25s ease;
+}
+
+.about-cta:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(210, 0, 0, 0.23);
+}
+
+.about-cta:hover svg {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+        max-width: 760px;
+    }
+
+    .about-visual {
+        max-width: 620px;
+
+        margin: 0 auto;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .about-description {
+        max-width: 650px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-section {
+        padding: 75px 0;
+    }
+
+    .about-container {
+        width: min(100% - 32px,
+                500px);
+
+        gap: 45px;
+    }
+
+    .about-visual {
+        min-height: 430px;
+    }
+
+    .about-image-main {
+        top: 25px;
+
+        width: 68%;
+        height: 305px;
+    }
+
+    .about-image-secondary {
+        bottom: 28px;
+
+        width: 58%;
+        height: 225px;
+
+        border-width: 5px;
+    }
+
+    .about-experience-card {
+        width: 112px;
+        min-height: 95px;
+
+        padding: 15px;
+    }
+
+    .about-experience-number {
+        font-size: 24px;
+    }
+
+    .about-experience-label {
+        font-size: 9px;
+    }
+
+    .about-growth-card {
+        right: 0;
+        bottom: 0;
+
+        min-width: 165px;
+
+        padding: 10px 12px;
+    }
+
+    .about-growth-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .about-growth-card strong {
+        font-size: 15px;
+    }
+
+    .about-growth-card span {
+        font-size: 8px;
+    }
+
+    .about-visual-accent {
+        display: none;
+    }
+
+    .about-title {
+        font-size: 34px;
+
+        letter-spacing: -1.2px;
+    }
+
+    .about-description {
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .about-feature {
+        flex-direction: row;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .about-feature-icon {
+        flex-shrink: 0;
+    }
+
+    .about-cta {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .about-visual {
+        min-height: 390px;
+    }
+
+    .about-image-main {
+        height: 280px;
+    }
+
+    .about-image-secondary {
+        height: 205px;
+    }
+
+    .about-title {
+        font-size: 30px;
+    }
+}

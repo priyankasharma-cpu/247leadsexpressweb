@@ -1,0 +1,337 @@
+/* =========================================================
+   GLOBAL EFFECT SYSTEM
+========================================================= */
+
+:root {
+    --light-x: 50%;
+    --light-y: 50%;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.scroll-reveal {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   GLOBAL INTERACTIVE ELEMENT
+========================================================= */
+
+.hero,
+.hero-badge,
+.hero-stats,
+.hero-btn-primary,
+.hero-btn-outline,
+.hero-trust,
+.hero-visual,
+.service-card,
+.testimonial-card,
+.portfolio-card,
+.work-card,
+.feature-card,
+.benefit-card,
+.process-card,
+.contact-card {
+    --light-x: 50%;
+    --light-y: 50%;
+
+    position: relative;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   CURSOR FOLLOWING LIGHT
+========================================================= */
+
+.hero::before,
+.hero-badge::before,
+.hero-stats::before,
+.hero-btn-primary::before,
+.hero-btn-outline::before,
+.hero-trust::before,
+.hero-visual::before,
+.service-card::before,
+.testimonial-card::before,
+.portfolio-card::before,
+.work-card::before,
+.feature-card::before,
+.benefit-card::before,
+.process-card::before,
+.contact-card::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    width: 220px;
+    height: 220px;
+
+    left: var(--light-x);
+    top: var(--light-y);
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.1) 24%,
+            rgba(255, 255, 255, 0.05) 45%,
+            transparent 72%);
+
+    filter: blur(20px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+
+    will-change: left, top, opacity;
+}
+
+
+/* =========================================================
+   SHOW LIGHT ON HOVER
+========================================================= */
+
+.hero.is-hovered::before,
+.hero-badge.is-hovered::before,
+.hero-stats.is-hovered::before,
+.hero-btn-primary.is-hovered::before,
+.hero-btn-outline.is-hovered::before,
+.hero-trust.is-hovered::before,
+.hero-visual.is-hovered::before,
+.service-card.is-hovered::before,
+.testimonial-card.is-hovered::before,
+.portfolio-card.is-hovered::before,
+.work-card.is-hovered::before,
+.feature-card.is-hovered::before,
+.benefit-card.is-hovered::before,
+.process-card.is-hovered::before,
+.contact-card.is-hovered::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   LIGHT SWEEP
+========================================================= */
+
+.hero::after,
+.hero-badge::after,
+.hero-stats::after,
+.hero-btn-primary::after,
+.hero-btn-outline::after,
+.hero-trust::after,
+.hero-visual::after,
+.service-card::after,
+.testimonial-card::after,
+.portfolio-card::after,
+.work-card::after,
+.feature-card::after,
+.benefit-card::after,
+.process-card::after,
+.contact-card::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 21;
+
+    pointer-events: none;
+
+    top: -80%;
+    left: -130%;
+
+    width: 45%;
+    height: 260%;
+
+    background:
+        linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.03) 25%,
+            rgba(255, 255, 255, 0.30) 50%,
+            rgba(255, 255, 255, 0.03) 75%,
+            transparent 100%);
+
+    transform: rotate(18deg);
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   RUN SWEEP
+========================================================= */
+
+.hero.is-hovered::after,
+.hero-badge.is-hovered::after,
+.hero-stats.is-hovered::after,
+.hero-btn-primary.is-hovered::after,
+.hero-btn-outline.is-hovered::after,
+.hero-trust.is-hovered::after,
+.hero-visual.is-hovered::after,
+.service-card.is-hovered::after,
+.testimonial-card.is-hovered::after,
+.portfolio-card.is-hovered::after,
+.work-card.is-hovered::after,
+.feature-card.is-hovered::after,
+.benefit-card.is-hovered::after,
+.process-card.is-hovered::after,
+.contact-card.is-hovered::after {
+    opacity: 1;
+
+    animation:
+        globalLightSweep 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes globalLightSweep {
+    0% {
+        left: -130%;
+    }
+
+    100% {
+        left: 160%;
+    }
+}
+
+
+/* =========================================================
+   SUBTLE INTERACTION
+========================================================= */
+
+.service-card,
+.testimonial-card,
+.portfolio-card,
+.work-card,
+.feature-card,
+.benefit-card,
+.process-card,
+.contact-card {
+    transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.3s ease;
+}
+
+.service-card.is-hovered,
+.testimonial-card.is-hovered,
+.portfolio-card.is-hovered,
+.work-card.is-hovered,
+.feature-card.is-hovered,
+.benefit-card.is-hovered,
+.process-card.is-hovered,
+.contact-card.is-hovered {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   BUTTON INTERACTION
+========================================================= */
+
+.hero-btn-primary,
+.hero-btn-outline {
+    overflow: hidden;
+}
+
+.hero-btn-primary::before,
+.hero-btn-outline::before {
+    width: 160px;
+    height: 160px;
+
+    filter: blur(16px);
+}
+
+
+/* =========================================================
+   MOBILE / TOUCH DEVICES
+========================================================= */
+
+@media (hover: none),
+(pointer: coarse) {
+
+    .hero::before,
+    .hero::after,
+    .hero-badge::before,
+    .hero-badge::after,
+    .hero-stats::before,
+    .hero-stats::after,
+    .hero-btn-primary::before,
+    .hero-btn-primary::after,
+    .hero-btn-outline::before,
+    .hero-btn-outline::after,
+    .hero-trust::before,
+    .hero-trust::after,
+    .hero-visual::before,
+    .hero-visual::after,
+    .service-card::before,
+    .service-card::after,
+    .testimonial-card::before,
+    .testimonial-card::after,
+    .portfolio-card::before,
+    .portfolio-card::after,
+    .work-card::before,
+    .work-card::after,
+    .feature-card::before,
+    .feature-card::after,
+    .benefit-card::before,
+    .benefit-card::after,
+    .process-card::before,
+    .process-card::after,
+    .contact-card::before,
+    .contact-card::after {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+.reduced-motion .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.reduced-motion .hero::before,
+.reduced-motion .hero::after,
+.reduced-motion .hero-badge::before,
+.reduced-motion .hero-badge::after,
+.reduced-motion .hero-stats::before,
+.reduced-motion .hero-stats::after,
+.reduced-motion .hero-btn-primary::before,
+.reduced-motion .hero-btn-primary::after,
+.reduced-motion .hero-btn-outline::before,
+.reduced-motion .hero-btn-outline::after,
+.reduced-motion .hero-trust::before,
+.reduced-motion .hero-trust::after,
+.reduced-motion .hero-visual::before,
+.reduced-motion .hero-visual::after {
+    display: none;
+}
