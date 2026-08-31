@@ -17,6 +17,30 @@ const Navbar = () => {
         { name: "Affiliate Marketing", path: "/services/affiliate-marketing" },
     ];
 
+
+    const handleAboutClick = (e) => {
+        e.preventDefault();
+
+        const goToAbout = () => {
+            const aboutSection = document.getElementById("about");
+
+            if (aboutSection) {
+                aboutSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        };
+
+        if (window.location.pathname === "/") {
+            goToAbout();
+            return;
+        }
+
+        window.location.href = "/#about";
+    };
+
+
     return (
         <header className="navbar">
             <div className="navbar-container">
@@ -29,7 +53,7 @@ const Navbar = () => {
                 {/* Desktop Navigation */}
                 <nav className="desktop-nav">
                     <Link to="/" className="nav-link">Home</Link>
-                    <Link to="#about" className="nav-link">About Us</Link>
+                    <Link to="/#about" className="nav-link" onClick={handleAboutClick} >About Us</Link>
 
                     {/* Services Dropdown */}
                     <div
@@ -85,7 +109,10 @@ const Navbar = () => {
             {mobileMenuOpen && (
                 <div className="mobile-nav">
                     <Link to="/" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                    <Link to="#about" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+                    <Link to="#about" className="mobile-nav-link" onClick={(e) => {
+                        handleAboutClick(e);
+                        setMobileMenuOpen(false);
+                    }}>About Us</Link>
 
                     <div className="mobile-services">
                         <button

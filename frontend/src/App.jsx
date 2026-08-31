@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
 // Pages
-import Home from "./pages/Home/home";
+import Home from "./pages/Home/Home"
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
 
           <Navbar />
 
-          <div className="flex-grow">
+          <div className="grow">
             <Routes>
               <Route
                 path="/"
