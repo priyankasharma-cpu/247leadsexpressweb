@@ -164,7 +164,7 @@ const Hero = () => {
 
                     {/* CTA BUTTONS */}
                     <div className="hero-buttons" ref={buttonsRef}>
-                        <a href="#contact" className="hero-btn-primary">
+                        <a href="/contact" className="hero-btn-primary">
                             <span>Get Started Now</span>
                             <ArrowRight size={18} aria-hidden="true" />
                         </a>

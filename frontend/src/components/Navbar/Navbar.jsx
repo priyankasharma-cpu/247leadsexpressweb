@@ -41,6 +41,29 @@ const Navbar = () => {
     };
 
 
+    const handleWhyChooseClick = (e) => {
+        e.preventDefault();
+
+        const goToWhyChoose = () => {
+            const whySection = document.getElementById("why-us");
+
+            if (whySection) {
+                whySection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        };
+
+        if (window.location.pathname === "/") {
+            goToWhyChoose();
+            return;
+        }
+
+        window.location.href = "/#why-us";
+    };
+
+
     return (
         <header className="navbar">
             <div className="navbar-container">
@@ -85,7 +108,13 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    <Link to="/why-us" className="nav-link">Why Us</Link>
+                    <Link
+                        to="/#why-us"
+                        className="nav-link"
+                        onClick={handleWhyChooseClick}
+                    >
+                        Why Choose Us
+                    </Link>
                     <Link to="/contact" className="nav-link">Contact</Link>
                 </nav>
 

@@ -3,6 +3,53 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import logo from "../../assets/images/weblogo.jpg";
 import "./Footer.css";
 
+
+
+const handleAboutClick = (e) => {
+    e.preventDefault();
+
+    const goToAbout = () => {
+        const aboutSection = document.getElementById("about");
+
+        if (aboutSection) {
+            aboutSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    };
+
+    if (window.location.pathname === "/") {
+        goToAbout();
+        return;
+    }
+
+    window.location.href = "/#about";
+};
+
+
+const handleWhyUsClick = (e) => {
+    e.preventDefault();
+
+    const goToWhyUs = () => {
+        const whySection = document.getElementById("why-us");
+
+        if (whySection) {
+            whySection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    };
+
+    if (window.location.pathname === "/") {
+        goToWhyUs();
+        return;
+    }
+
+    window.location.href = "/#why-us";
+};
+
 const Footer = () => {
     return (
         <footer className="footer">
@@ -23,8 +70,8 @@ const Footer = () => {
                     <h4 className="footer-heading">Quick Links</h4>
                     <ul className="footer-links">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/why-us">Why Us</Link></li>
+                        <li><Link to="/#about" onClick={handleAboutClick}>About Us</Link></li>
+                        <li><Link to="/#why-us" onClick={handleWhyUsClick}>Why Us</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
                 </div>

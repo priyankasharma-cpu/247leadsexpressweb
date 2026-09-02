@@ -10,7 +10,10 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
 // Pages
-import Home from "./pages/Home/Home"
+import Home from "./pages/Home/Home";
+import Contact from "./pages/Contact/contact";
+
+import LeadGeneration from "./pages/Services/LeadGeneration/LeadGeneration";
 
 function App() {
   return (
@@ -20,18 +23,34 @@ function App() {
         {/* Global Animation System */}
         <GlobalEffects />
 
-        <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
+        <div className="flex flex-col min-h-screen">
 
           <Navbar />
 
-          <div className="grow">
+          <main className="grow">
+
             <Routes>
+
+              {/* Home */}
               <Route
                 path="/"
                 element={<Home />}
               />
+
+              {/* Contact */}
+              <Route
+                path="/contact"
+                element={<Contact />}
+              />
+              {/* LeadGeneration */}
+              <Route
+                path="/services/lead-generation"
+                element={<LeadGeneration />}
+              />
+
             </Routes>
-          </div>
+
+          </main>
 
           <Footer />
 
